@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neural Network Visualizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    body { font-family: Arial; text-align: center; padding: 20px; }
+    canvas { border: 1px solid black; cursor: crosshair; }
+    button { margin: 5px; padding: 10px 15px; }
+  </style>
+</head>
+<body>
+
+  <h1>Custom Neural Network Trainer</h1>
+
+  <div>
+    <label>Select Class:</label>
+    <button onclick="setLabel('A')">A</button>
+    <button onclick="setLabel('B')">B</button>
+    <button onclick="setLabel('C')">C</button>
+  </div>
+
+  <canvas id="canvas" width="500" height="500"></canvas>
+
+  <div>
+    <button onclick="trainModel()">Train Model</button>
+    <button onclick="showLoss()">Show Loss</button>
+    <button onclick="predictCanvas()">Show Prediction</button>
+  </div>
+
+  <!-- <canvas id="lossChart" width="500" height="200"></canvas> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
